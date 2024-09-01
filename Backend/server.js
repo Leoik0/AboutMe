@@ -4,7 +4,7 @@ const multer = require("multer");
 const cors = require("cors");
 const { Sequelize, DataTypes } = require("sequelize");
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Configuração do multer para o upload de arquivos
 const upload = multer({ dest: "uploads/" });

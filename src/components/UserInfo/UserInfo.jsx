@@ -273,10 +273,13 @@ function UserInfo({ onSubmit }) {
     formData.append("photo", photo);
 
     try {
-      const response = await fetch("http://localhost:5000/api/users", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://about-me-lac-iota.vercel.app//api/users",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       const data = await response.json();
       onSubmit(data);
     } catch (error) {
