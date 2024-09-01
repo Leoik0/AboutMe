@@ -1,6 +1,6 @@
-const express = require("express");
-const cors = require("cors");
-const { Sequelize, DataTypes } = require("sequelize");
+import express from "express";
+import cors from "cors";
+import { Sequelize, DataTypes } from "sequelize";
 
 const app = express();
 const port = process.env.PORT || 5000;
