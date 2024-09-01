@@ -12,7 +12,9 @@ function Rank() {
   useEffect(() => {
     const fetchRanking = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/users");
+        const response = await fetch(
+          "https://about-me-kappa-seven.vercel.app//api/users"
+        );
         const data = await response.json();
         setRanking(data);
       } catch (error) {
@@ -121,15 +123,7 @@ function Rank() {
               }}
             >
               <span className="rank-position">{index + 1}º lugar</span>
-              <img
-                src={
-                  user.photo
-                    ? `http://localhost:5000/${user.photo}`
-                    : "/default-avatar.png"
-                }
-                alt="User"
-                className="user-photo"
-              />
+
               <span className="user-name">{user.name}</span>
               <span className="user-points">{user.points} pontos</span>
             </li>
@@ -147,15 +141,6 @@ function Rank() {
             <p>O primeiro colocado recebe um presente misterioso</p>
             {firstPlace && (
               <div className="first-place">
-                <img
-                  src={
-                    firstPlace.photo
-                      ? `http://localhost:5000/${firstPlace.photo}`
-                      : "/default-avatar.png"
-                  }
-                  alt="First Place"
-                  className="first-place-photo"
-                />
                 <p>{firstPlace.name}</p>
               </div>
             )}
