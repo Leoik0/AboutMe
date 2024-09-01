@@ -274,12 +274,13 @@ function UserInfo({ onSubmit }) {
 
     try {
       const response = await fetch(
-        "https://about-me-lac-iota.vercel.app//api/users",
+        "https://about-me-lac-iota.vercel.app/api/users",
         {
           method: "POST",
           body: formData,
         }
       );
+
       const data = await response.json();
       onSubmit(data);
     } catch (error) {
