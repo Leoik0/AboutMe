@@ -3,6 +3,7 @@ const path = require("path");
 const multer = require("multer");
 const cors = require("cors");
 const { Sequelize, DataTypes } = require("sequelize");
+
 const app = express();
 const port = process.env.PORT || 5000;
 
