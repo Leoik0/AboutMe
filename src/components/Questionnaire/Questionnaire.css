@@ -1,0 +1,241 @@
+.questionnaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background: url("../../img/bg2.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  padding: 10%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-question {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+  height: 60%;
+}
+
+.avatar {
+  height: 120%;
+  filter: drop-shadow(5px 5px 10px rgb(24, 23, 2));
+  transition: all 0.3s ease;
+}
+
+.balloon {
+  height: 100%;
+  width: 130%;
+  position: absolute;
+  top: -60%;
+  left: 50%;
+  transition: all 0.3s ease;
+}
+
+.balloon-img {
+  width: 100%;
+  height: 100%;
+}
+
+.question-content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.6rem;
+  padding: 12%;
+  text-align: center;
+  overflow: hidden;
+  width: 70%; /* Reduzir a largura para limitar as palavras por linha */
+  word-wrap: break-word;
+}
+
+.question-number {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 5px;
+  position: fixed;
+  top: 2%;
+  left: 2%;
+}
+
+.answers {
+  background: #0000007e;
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+  padding: 2%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.answers-header {
+  width: 80%; /* Define a largura do cabeçalho */
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  z-index: 1; /* Garante que o cabeçalho fique sobreposto aos demais elementos */
+}
+
+.answers ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.answers li {
+  display: flex;
+  justify-content: center;
+}
+
+.answers button {
+  background: linear-gradient(145deg, #5a5a5a, #000000);
+  color: white;
+  border: 2px solid #f8f8f89a;
+  border-radius: 5px;
+  padding: 5%;
+  height: 4.5em; /* Aumente o padding conforme necessário */
+  cursor: pointer;
+  width: 150px; /* Define o tamanho fixo */
+  text-align: center;
+  transition: background 0.3s ease, font-size 0.3s ease;
+  font-size: clamp(0.8rem, 2vw, 1.1rem); /* Ajuste automático da fonte */
+  word-wrap: break-word;
+  overflow: hidden; /* Esconde qualquer texto que extravase */
+}
+
+.answers button:hover {
+  background: linear-gradient(145deg, #000000, #5a5a5a);
+}
+
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f4f8;
+}
+
+.result-content {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.result-heading {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.result-points {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.result-message {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.result-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.result-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 432px) {
+  .balloon {
+    width: 90%;
+    height: 70%;
+    top: -6%;
+    left: 40%;
+  }
+
+  .avatar {
+    height: 60%;
+  }
+
+  .question-content {
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 10%;
+  }
+
+  .answers {
+    width: 120%;
+    padding: 10%;
+  }
+
+  .answers-header {
+    width: 80%; /* Define a largura do cabeçalho */
+    margin-bottom: 20px;
+  }
+
+  .answers button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 433px) and (max-width: 800px) {
+  .balloon {
+    width: 140%; /* Diminui o tamanho do balão em telas pequenas */
+    height: 80%;
+    top: -25%;
+    left: 50%;
+  }
+
+  .avatar {
+    height: 70%;
+  }
+
+  .answers {
+    width: 80%;
+    padding: 5%;
+  }
+}
+
+@media (max-height: 700px) {
+  .question-content {
+    font-size: 0.5rem;
+    padding: 8%;
+  }
+}
+
+@media (min-height: 701px) {
+  .question-content {
+    font-size: 0.5rem;
+    padding: 12%;
+  }
+}

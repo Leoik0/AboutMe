@@ -1,0 +1,193 @@
+.rank {
+  position: relative;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  z-index: 2; /* Garante que o conteúdo fique acima do vídeo */
+}
+
+.background-video {
+  position: fixed; /* Fixa o vídeo no fundo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Define a altura como 100% da altura da viewport */
+  object-fit: cover; /* Faz o vídeo cobrir toda a área */
+  z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+}
+
+.rank-content {
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo fique acima do vídeo */
+}
+
+.rank-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rank-icon {
+  font-size: 2em;
+  animation: colorChange 2s infinite;
+}
+
+.icon-label {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+/* Animação para o ícone de troféu */
+.rank-icon.trophy {
+  color: #f1c40f; /* Cor inicial amarela */
+  animation: colorChangeTrophy 2s infinite;
+}
+
+@keyframes colorChangeTrophy {
+  0% {
+    color: #f1c40f; /* Amarelo */
+  }
+  50% {
+    color: #f39c12; /* Amarelo ouro */
+  }
+  100% {
+    color: #f1c40f; /* Amarelo */
+  }
+}
+
+/* Animação para o ícone de compartilhar */
+.rank-icon.share {
+  color: #ff69b4; /* Cor inicial rosa */
+  animation: colorChangeShare 2s infinite;
+}
+
+@keyframes colorChangeShare {
+  0% {
+    color: #ff69b4; /* Rosa */
+  }
+  50% {
+    color: #c71585; /* Rosa escuro */
+  }
+  100% {
+    color: #ff69b4; /* Rosa */
+  }
+}
+
+.rank h1 {
+  font-size: 2em;
+  color: #fff;
+}
+
+.rank ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rank li {
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.rank li:hover {
+  transform: translateY(-5px);
+}
+
+.rank .rank-position {
+  font-weight: bold;
+  color: #000;
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.rank .user-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #0000008c;
+}
+
+.rank .user-name {
+  flex-grow: 1;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.rank .user-points {
+  font-weight: bold;
+  color: #000;
+  text-align: right;
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.first-place {
+  margin-top: 20px;
+}
+
+.first-place-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #0b21a0;
+}
+
+.countdown {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0b21a0;
+}

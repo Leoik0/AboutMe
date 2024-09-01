@@ -1,0 +1,235 @@
+/* Estilos gerais do componente */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  background: linear-gradient(120deg, #035f94, #02203d);
+  background-size: 200% 200%;
+  animation: gradientAnimation 8s ease infinite;
+  text-align: center;
+  color: #fff;
+}
+
+/* Animação do gradiente */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.img-user-info {
+  width: 200px;
+}
+
+/* Container transparente e borrado para a área de upload */
+.upload-container {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para a área de arrastar e soltar a foto */
+.photo-dropzone {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px dashed #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.6rem;
+}
+
+.photo-dropzone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Input de nome com efeito na label */
+.input-container {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  padding-left: 5px;
+  border: none;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  background: transparent;
+  color: #fff;
+  outline: none;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.input-container input:focus {
+  border-bottom-color: #b2a2b9;
+}
+
+.input-container label {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+  top: -15px;
+  font-size: 0.9em;
+  color: #b2a1b9;
+}
+
+/* Estilo do botão upload */
+.upload-button-container {
+  margin-top: 20px;
+  width: 100%; /* Certifique-se que o container ocupe 100% da largura */
+}
+
+.upload-button-container input[type="file"] {
+  display: none;
+}
+
+.upload-button {
+  width: 100%; /* O botão de upload ocupará 100% da largura do container */
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.upload-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Estilo do botão Enviar */
+.submit-button {
+  font-weight: bold;
+  width: 100%; /* O botão de enviar ocupará 100% da largura do container */
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+
+/* Estilo do parágrafo com regras */
+.rules-link {
+  color: #b2a1b9;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+/* Estilo do modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  color: #000000;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-content li {
+  margin-bottom: 10px;
+}
+
+.modal-close {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.modal-close:hover {
+  background-color: #0056b3;
+}
+
+/* Dispositivos pequenos (smartphones) */
+@media (max-width: 600px) {
+  .upload-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .img-user-info {
+    width: 150px;
+  }
+
+  .photo-dropzone {
+    width: 120px;
+    height: 120px;
+    font-size: 1.4rem;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
