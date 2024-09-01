@@ -7,10 +7,7 @@ const User = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  photo: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
+
   points: {
     type: DataTypes.INTEGER,
     allowNull: false,
