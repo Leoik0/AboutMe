@@ -5,9 +5,10 @@ const { Sequelize, DataTypes } = require("sequelize");
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Configuração do Sequelize para conexão com o banco de dados
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: "postgres", // ou 'mysql', dependendo do seu banco de dados
+// Configuração do Sequelize para conexão com o SQLite
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: "database.sqlite", // Caminho para o arquivo do banco de dados SQLite
 });
 
 // Definição do modelo User
@@ -34,7 +35,7 @@ app.post("/api/users", async (req, res) => {
 
     const user = await User.create({
       name,
-      points: 0, // Default points
+      points: 0, // Pontos padrão
     });
 
     res.status(201).json(user);
