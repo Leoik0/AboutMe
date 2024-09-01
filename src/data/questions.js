@@ -1,6 +1,6 @@
 import avatar1 from "../img/akashi.png";
 import avatar2 from "../img/akaza.png";
-import avatar3 from "../img/l.png";
+import avatar3 from "../img/L.png";
 import avatar4 from "../img/mikey.png";
 import avatar5 from "../img/qin.png";
 import avatar6 from "../img/kiyo.png";
